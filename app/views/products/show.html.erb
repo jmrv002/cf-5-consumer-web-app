@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<section id="product" class="container text-center">
+  <%= image_tag(@product.image_url, class: "card-img-top", alt: 'product_img')%>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Color:</strong>
+    <%= @product.colour %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </p>
+</section>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
