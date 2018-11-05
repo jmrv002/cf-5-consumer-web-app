@@ -1,27 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<section id="product" class="container text-center">
-  <%= image_tag(@product.image_url, class: "card-img-top", alt: 'product_img')%>
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
+<section id="product" class="container">
+  <h1>Product</h1>
+  <div class="row">
+    <div class="col-6">
+      <%= image_tag(@product.image_url, class: "card-img-top", alt: 'product_img')%>
+    </div>
+    <div class="col-6">
+      <h3>Data</h3>
+      <p>
+        <span><i class="fab fa-product-hunt"></i> Name:</span>
+        <%= @product.name %>
+      </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
+      <p>
+        <span><i class="fas fa-palette"></i> Color:</span>
+        <%= @product.colour %>
+      </p>
 
-  <p>
-    <strong>Color:</strong>
-    <%= @product.colour %>
-  </p>
+      <p>
+        <span><i class="fas fa-dollar-sign"></i> Price:</span>
+        <%= @product.price %>
+      </p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= @product.price %>
-  </p>
+      <p>
+        <span><i class="fas fa-align-left"></i> Description:</span>
+        <%= @product.description %>
+      </p>
+    </div>
+  </div>
 </section>
+
+<section id="reviews">
+  <h1>Comments</h1>
+  <p>comment example</p>
+  <p>comment example</p>
+</section> 
+
+
+
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
