@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :users
   
   root 'simple_pages#landing_page'
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
   
   resources :orders, only: [:index, :show, :create, :destroy]
   
-  resources :products
+  resources :products do
+    resources :comments
+  end
 end

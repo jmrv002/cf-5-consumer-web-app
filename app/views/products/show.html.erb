@@ -27,19 +27,16 @@
         <span><i class="fas fa-align-left"></i> Description:</span>
         <%= @product.description %>
       </p>
+
+      <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+    </div>
+    <div class="review-container col-sm-12">
+      <%= render "new_comment" %>
+
+      <%= render 'comments' %>
     </div>
   </div>
 </section>
 
-<section id="reviews">
-  <h1>Comments</h1>
-  <p>comment example</p>
-  <p>comment example</p>
-</section> 
 
 
-
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>

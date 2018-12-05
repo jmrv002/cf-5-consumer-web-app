@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery.raty
  */
 body{
 	background-color: #f2f2f2;
@@ -19,3 +20,7 @@ body{
   margin: 0;
 }
 
+.row {
+   margin-right: 0; 
+   margin-left: 0; 
+}
