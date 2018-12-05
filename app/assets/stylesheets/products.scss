@@ -79,9 +79,15 @@ form input[type="submit"]{
   }
 }
 
-.product-reviews{
+
+
+#product-reviews{
   .rated{
     margin: 0 15px;
+  }
+
+  .pagination *{
+    margin-left: 20px;
   }
 }
 
