@@ -6,4 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Product.create(name: "seed-generated product", description: "I also created this product without using the HTML form!")
+Product.create(name: "Bike", image_url: "bike.jpg", description: "sdf", colour: "blue", price:2.1)
+Product.create(name: "Camara", image_url: "camara.jpg", description: "sdf", colour: "blue", price:2.1)
+Product.create(name: "Phone", image_url: "phone.png", description: "sdf", colour: "blue", price:2.1)
+Product.create(name: "Cat", image_url: "cat.jpg", description: "sdf", colour: "blue", price:2.1)
