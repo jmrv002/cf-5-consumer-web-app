@@ -50,7 +50,9 @@
       </div>
     </nav>
     <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
+      <script type="text/javascript">
+        alert('<%== value %>')
+      </script>
     <% end %>
     
     <%= yield %>
