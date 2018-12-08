@@ -1,5 +1,5 @@
 <div class="col-sm">
-  <div class="card" style="width: 18rem;">
+  <div class="card">
     <%= image_tag(product.image_url, class: "card-img-top", alt: 'product_img')%>
     <div class="card-body">
       <h5 class="card-title"><%= product.name %></h5>
@@ -8,17 +8,17 @@
       <p><strong>$ <%= product.price %></strong></p>
       <p>
         <div class="actions row">
-          <div class="col-sm">
+          <div class="col-4">
             <%= link_to product do %>
               <i class="fas fa-eye"></i>
             <% end %>
           </div>
-          <div class="col-sm">
+          <div class="col-4">
             <%= link_to edit_product_path(product) do %>
               <i class="fas fa-pencil-alt"></i>
             <% end %>
           </div>
-          <div class="col-sm">
+          <div class="col-4">
             <%= link_to product, :method => :delete do %>
                <i class="fas fa-trash"></i>
             <% end %>
