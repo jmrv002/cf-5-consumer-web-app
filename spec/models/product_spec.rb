@@ -6,8 +6,8 @@ describe Product do
   end
 
   context "when the product has comments" do
-    let(:product) { Product.create!(name: "race bike") }
-    let(:user) { User.create!(email: "jmrv002@gmail.com", 'password': "123123") }
+    product = FactoryBot.create(:product)
+    user = FactoryBot.create(:user)
 
     before do
       product.comments.create!(rating: 1, user: user, body: "Awful bike!")

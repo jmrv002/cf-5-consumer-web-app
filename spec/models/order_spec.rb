@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Order do
-  let(:product) { Product.create!(name: "race bike") }
-  let(:user) {User.create!(email: "jmrv002@gmail.com", password: "123456")}
+  product = FactoryBot.create(:product)
+  user = FactoryBot.create(:user)
 
   it "is a valid order" do
     expect(Order.new( user: user, product: product, total: 100)).to be_valid
