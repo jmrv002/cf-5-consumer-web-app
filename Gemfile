@@ -21,6 +21,8 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'devise'
 
+gem 'stripe'
+
 gem 'cancancan', '~> 2.0'
 
 # Use jquery as the JavaScript library
