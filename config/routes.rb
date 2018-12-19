@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
+
+  post 'payments/create'
+
+  post 'message', to: 'simple_pages#message', as: 'message'
 end
