@@ -16,6 +16,4 @@ Rails.application.routes.draw do
   end
 
   post 'payments/create'
-
-  post 'message', to: 'simple_pages#message', as: 'message'
 end
