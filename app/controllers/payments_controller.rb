@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
-        amount: 2000, # amount in cents, again
+        amount: (product.price * 100).to_i,
         currency: "usd",
         source: token,
         description: params[:stripeEmail]
@@ -22,6 +22,8 @@ class PaymentsController < ApplicationController
         )
       end
 
+      flash[:message] = "Thanks for your order ;)"
+
     rescue Stripe::CardError => e
       # The card has been declined
       body = e.json_body
@@ -29,6 +31,7 @@ class PaymentsController < ApplicationController
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
     end
 
-    redirect_to orders_path
+
+    redirect_to product_path(product)
   end
 end
