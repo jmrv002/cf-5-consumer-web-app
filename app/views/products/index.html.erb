@@ -10,6 +10,8 @@
 
 <br>
 
-<%= link_to new_product_path do %>
-  <button id="add-product-btn">+</button>
+<% if user_signed_in? %>
+  <%= link_to new_product_path do %>
+    <button id="add-product-btn">+</button>
+  <% end %>
 <% end %>
