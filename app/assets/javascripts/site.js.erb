@@ -1,4 +1,6 @@
 $(document).on('turbolinks:load', function(){
+
+    //product rating
     $('.rating').raty({
       starHalf: '<%= asset_path 'star-half.png' %>',
       starOff: '<%= asset_path 'star-off.png' %>',
@@ -15,4 +17,7 @@ $(document).on('turbolinks:load', function(){
         return $(this).attr('data-score');
       }
     });
+
+    //elevateZoom initializer
+    $(".img-zoom").elevateZoom();
 });

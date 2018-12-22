@@ -2,7 +2,7 @@
   <h1>Product</h1>
   <div class="row">
     <div class="col-sm-12 col-md-6">
-      <%= image_tag(@product.image_url, class: "card-img-top", alt: 'product_img')%>
+      <%= image_tag(@product.image_url, class: "card-img-top img-zoom", alt: 'product_img', :data => {:zoom_image => image_url(@product.image_url)})%>
     </div>
     <div class="col-sm-12 col-md-6">
       <h3>Data</h3>
