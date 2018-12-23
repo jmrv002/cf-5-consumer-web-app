@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    #test redis
+    $redis.sadd("user_#1_friends", 22)
+    
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
