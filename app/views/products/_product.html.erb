@@ -1,32 +1,34 @@
-<div class="col-sm">
-  <div class="card">
-    <%= image_tag(product.image_url, class: "card-img-top", alt: 'product_img')%>
-    <div class="card-body">
-      <h5 class="card-title"><%= product.name %></h5>
-      <p class="card-text"><%= product.description %></p>
-      <p class="card-text">Color: <%= product.colour %></p>
-      <p><strong>$ <%= product.price %></strong></p>
-      <p>
-        <div class="actions row">
-          <div class="col-4">
-            <%= link_to product do %>
-              <i class="fas fa-eye"></i>
-            <% end %>
+<% cache product do %>
+  <div class="col-sm">
+    <div class="card">
+      <%= image_tag(product.image_url, class: "card-img-top", alt: 'product_img')%>
+      <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <p class="card-text"><%= product.description %></p>
+        <p class="card-text">Color: <%= product.colour %></p>
+        <p><strong>$ <%= product.price %></strong></p>
+        <p>
+          <div class="actions row">
+            <div class="col-4">
+              <%= link_to product do %>
+                <i class="fas fa-eye"></i>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="col-4">
+                <%= link_to edit_product_path(product) do %>
+                  <i class="fas fa-pencil-alt"></i>
+                <% end %>
+              </div>
+              <div class="col-4">
+                <%= link_to product, :method => :delete do %>
+                   <i class="fas fa-trash"></i>
+                <% end %>
+              </div>
+            <% end %> 
           </div>
-          <% if user_signed_in? %>
-            <div class="col-4">
-              <%= link_to edit_product_path(product) do %>
-                <i class="fas fa-pencil-alt"></i>
-              <% end %>
-            </div>
-            <div class="col-4">
-              <%= link_to product, :method => :delete do %>
-                 <i class="fas fa-trash"></i>
-              <% end %>
-            </div>
-          <% end %> 
-        </div>
-      </p>
+        </p>
+      </div>
     </div>
-  </div>
-</div><!-- /col -->
+  </div><!-- /col -->
+<% end %>
