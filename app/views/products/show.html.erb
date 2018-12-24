@@ -1,3 +1,6 @@
+<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+
+
 <section id="product" class="container">
   <h1>Product</h1>
   <div class="row" data-product-id="<%= @product.id %>">
@@ -36,10 +39,7 @@
       </div>
     <% end %>
     <div class="review-container col-sm-12">
-      <%= render "new_comment" %>
-      
-      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-      
+      <%= render "new_comment" %>      
       <%= render 'comments' %>
     </div>
   </div>
