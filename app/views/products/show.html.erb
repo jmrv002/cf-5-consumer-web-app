@@ -29,6 +29,11 @@
           <span><i class="fas fa-align-left"></i> Description:</span>
           <%= @product.description %>
         </p>
+    <% end %>
+        <p>
+          <span><i class="fas fa-eye"></i> Total Views:</span>
+          <%= @product.views %>
+        </p>
 
         <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
@@ -37,7 +42,7 @@
           <%= render partial: "shared/stripe_checkout_button" %>
         <% end %>
       </div>
-    <% end %>
+    
     <div class="review-container col-sm-12">
       <%= render "new_comment" %>      
       <%= render 'comments' %>
